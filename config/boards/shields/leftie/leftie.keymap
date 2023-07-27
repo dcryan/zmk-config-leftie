@@ -1,18 +1,32 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#define DEFAULT 0
+#define MEDIA   1
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-              &kp A &none &none &none &none &none
-              &none &none &none &none &none &none
-              &none &none &none &none &none &none
-              &none &none &none &none &none &none
-              &kp Z &none &none &none &none &none
-                                                  &none &none &bootloader
+              &kp GRAVE   &kp N1    &kp N2   &kp N3   &kp N4    &kp N5
+              &kp TAB     &kp Q     &kp W    &kp E    &kp R     &kp T
+              &kp TAB     &kp A     &kp S    &kp D    &kp F     &kp G
+              &kp LSHIFT  &kp Z     &kp X    &kp C    &kp V     &kp B
+              &bootloader &kp LCTRL &kp LALT &kp LEFT &kp RIGHT 
+                                                                       &kp BSPC &mo MEDIA &kp LGUI
+            >;
+        };
+
+        media_layer {
+            bindings = <
+              &none    &none &none      &none     &none         &none
+              &none    &none &none      &none     &none         &none
+              &kp C_PP &none &kp C_PREV &C_VOL_DN &kp C_VOL_UP  &kp C_NEXT
+              &none    &none &none      &none     &none         &none
+              &none    &none &none      &none     &none 
+                                                                           &none &none &bootloader
             >;
         };
     };
