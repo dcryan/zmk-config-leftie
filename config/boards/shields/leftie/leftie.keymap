@@ -3,6 +3,7 @@
 
 #define DEFAULT 0
 #define MEDIA   1
+#define BTOOTH  2
 
 / {
     keymap {
@@ -14,7 +15,7 @@
               &kp TAB     &kp Q     &kp W    &kp E    &kp R     &kp T
               &kp ESC     &kp A     &kp S    &kp D    &kp F     &kp G
               &kp LSHIFT  &kp Z     &kp X    &kp C    &kp V     &kp B
-              &mo MEDIA &kp LCTRL &kp LALT &kp LEFT &kp RIGHT 
+              &mo BTOOTH &kp LCTRL &kp LALT &kp LEFT &kp RIGHT 
                                                                        &kp BSPC &kp DEL &kp LGUI
             >;
         };
@@ -27,6 +28,17 @@
               &none    &none &none      &none        &none         &none
               &none    &none &none      &none        &none 
                                                                            &none &none &bootloader
+            >;
+        };
+
+        bt_layer {
+            bindings = <
+              &bt BT_SEL 0 &none &none &none &none &none
+              &none        &none &none &none &none &none
+              &none        &none &none &none &none &none
+              &none        &none &none &none &none &none
+              &none        &none &none &none &none 
+                                                  &bt BT_CLR &none &bootloader
             >;
         };
     };
