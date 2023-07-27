@@ -1,6 +1,6 @@
 if SHIELD_LEFTIE
 
 config ZMK_KEYBOARD_NAME
-  default "Leftie"
+    default "Leftie"
 
 endif
