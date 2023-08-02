@@ -17,7 +17,7 @@
               &mt LS(LC(LA(LGUI))) ESC &kp A     &kp S    &kp D    &kp F     &kp G
               &kp LSHIFT               &kp Z     &kp X    &kp C    &kp V     &kp B
               &mo MEDIA                &kp LCTRL &kp LALT &kp LEFT &kp RIGHT 
-                                                                                     &kp BSPC &kp DEL &kp LGUI
+                                                                                     &bspc_del &kp LGUI &kp LGUI
             >;
         };
 
@@ -32,5 +32,17 @@
             >;
         };
     };
+
+    behaviors {
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+    };
+
 };
 
